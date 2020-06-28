@@ -24,6 +24,6 @@ RUN apk --no-cache add perl wget xz tar curl bash ca-certificates && \
 
 RUN rm -rf /tmp/install-tl-unx /tmp/*
 
-COPY gdrive-update.py /
+COPY gdrive-update.py /usr/local/lib/python3.9
 
 WORKDIR /
