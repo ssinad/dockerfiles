@@ -15,8 +15,8 @@ RUN apk --no-cache add perl wget xz tar curl bash ca-certificates && \
 	tlmgr install latexmk import appendix bbm \
 	biblatex biblatex-ieee biblatex-apa biber units \
 	bbm-macros algorithmicx algorithms soul tracklang \
-	extarrows subfiles zref cleveref texliveonfly \ 
-	tabulary multirow enumitem csquotes pgfplots \ 
+	extarrows subfiles zref cleveref texliveonfly \
+	tabulary multirow enumitem csquotes pgfplots \
 	xmpincl glossaries glossaries-extra mfirstuc \
 	xfor datatool todonotes placeins cancel &&\
 	pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
