@@ -11,5 +11,5 @@ credentials = service_account.Credentials.from_service_account_file(
         SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 
 google_drive_service = googleapiclient.discovery.build('drive', 'v3', credentials=credentials)
-media = MediaFileUpload('thesis.pdf', mimetype='application/pdf', resumable=True)
+media = MediaFileUpload(argv[3], mimetype='application/pdf', resumable=True)
 google_drive_service.files().update(fileId=FILE_ID, media_body=media).execute()
