@@ -18,7 +18,7 @@ RUN apk --no-cache add perl wget xz tar curl bash ca-certificates && \
 	extarrows subfiles zref cleveref texliveonfly \
 	tabulary multirow enumitem csquotes pgfplots \
 	xmpincl glossaries glossaries-extra mfirstuc \
-	xfor datatool todonotes placeins cancel &&\
+	xfor datatool todonotes placeins cancel pdfx &&\
 	pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 
 RUN rm -rf /tmp/install-tl-unx /tmp/*
