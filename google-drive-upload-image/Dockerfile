@@ -1,5 +1,5 @@
-FROM python:rc-alpine3.12
+FROM python:3.9.0-alpine3.12
 
-RUN	pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+RUN	python3 -m pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 
 COPY gdrive-update.py /usr/local/lib/python3.9
