@@ -4,8 +4,6 @@ RUN apk add --no-cache python3 py3-pip
 
 RUN tlmgr install latexmk texliveonfly
 
-RUN tlmgr install biblatex biblatex-ieee biblatex-apa biber babel
-
-# RUN tlmgr install import bbm biblatex biblatex-ieee biblatex-apa biber bbm-macros algorithmicx algorithms soul tracklang extarrows subfiles zref cleveref appendix units tabulary multirow enumitem csquotes pgfplots xmpincl glossaries glossaries-extra mfirstuc xfor datatool todonotes placeins cancel pdfx 
+RUN tlmgr install biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel
 
 ENTRYPOINT ["/bin/sh","-c"]
