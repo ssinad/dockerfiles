@@ -10,4 +10,4 @@ RUN tlmgr install latexmk texliveonfly
 
 RUN tlmgr install biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel
 
-ENTRYPOINT ["/bin/sh","-c"]
+ENTRYPOINT []
