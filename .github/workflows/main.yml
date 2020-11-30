@@ -23,7 +23,7 @@ jobs:
 
     - name: Build images
       run: |
-        for dir in ./*; do 
+        for dir in *; do 
           echo $dir
           docker build -t registry.gitlab.com/${{ secrets.GITLAB_USERNAME }}/$dir:github $dir
         done
