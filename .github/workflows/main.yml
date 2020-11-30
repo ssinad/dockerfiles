@@ -26,7 +26,7 @@ jobs:
       run: |
         for dir in *; do 
           # echo $dir
-          docker build -t $USERNAME/$dir:$GITHUB_SHA -t $USERNAME/$dir:$latest $dir
+          docker build -t $USERNAME/$dir:$GITHUB_SHA -t $USERNAME/$dir:latest $dir
           docker push $USERNAME/$dir:$GITHUB_SHA
           docker push $USERNAME/$dir:latest
         done
