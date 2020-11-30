@@ -21,9 +21,12 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
     - name: Build and push images
+      env:
+        USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
       run: |
         for dir in *; do 
           # echo $dir
-          docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/$dir:$GITHUB_SHA $dir
-          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/$dir:$GITHUB_SHA
+          docker build -t $USERNAME/$dir:$GITHUB_SHA -t $USERNAME/$dir:$latest $dir
+          docker push $USERNAME/$dir:$GITHUB_SHA
+          docker push $USERNAME/$dir:latest
         done
