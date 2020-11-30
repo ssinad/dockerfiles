@@ -24,6 +24,6 @@ jobs:
       run: |
         for dir in *; do 
           # echo $dir
-          docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/$dir:latest $dir
-          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/$dir:latest
+          docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/$dir:$GITHUB_SHA $dir
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/$dir:$GITHUB_SHA
         done
