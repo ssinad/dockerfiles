@@ -4,4 +4,4 @@ RUN	python3 -m pip install --upgrade google-api-python-client==1.12.5 google-aut
 
 COPY gdrive-update.py /usr/local/lib/python3.9
 
-# RUN apt-get update && apt-get -y install curl
+RUN apt-get update && apt-get -y install curl
