@@ -29,8 +29,8 @@ jobs:
       run: |
         for dir in *; do 
           # echo $dir
-          docker build --cache-from $USERNAME/$dir -t $USERNAME/$dir:$GITHUB_SHA -t $USERNAME/$dir:latest $dir \
-            || docker build -t $USERNAME/$dir:$GITHUB_SHA -t $USERNAME/$dir:latest $dir 
+          docker build --cache-from $USERNAME/$dir -t $USERNAME/$dir:$GITHUB_SHA -t $USERNAME/$dir:latest --build-arg BUILDKIT_INLINE_CACHE=1 $dir \
+            || docker build -t $USERNAME/$dir:$GITHUB_SHA -t $USERNAME/$dir:latest --build-arg BUILDKIT_INLINE_CACHE=1 $dir 
           docker push $USERNAME/$dir:$GITHUB_SHA
           docker push $USERNAME/$dir:latest
         done
