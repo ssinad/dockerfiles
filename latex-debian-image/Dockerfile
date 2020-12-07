@@ -12,7 +12,9 @@ RUN apt-get update \
 
 RUN tlmgr init-usertree 
 
-RUN tlmgr option repository ftp://tug.org/historic/systems/texlive/2018/tlnet-final
+# RUN tlmgr option repository ftp://tug.org/historic/systems/texlive/2018/tlnet-final
+
+RUN tlmgr update --self 
 
 RUN tlmgr install latexmk texliveonfly
 
