@@ -5,7 +5,7 @@ RUN apt-get update \
 
 RUN tlmgr init-usertree
 
-RUN tlmgr install latexmk texliveonfly
+RUN tlmgr install --force latexmk texliveonfly
 
-RUN tlmgr install biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel
+RUN tlmgr install --force biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel
 
