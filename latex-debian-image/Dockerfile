@@ -1,13 +1,19 @@
-FROM  debian:buster-20201117-slim
+FROM python:3.9.0-slim-buster
 
-RUN apt-get update \
-    && apt-get install texlive-base -y
+COPY texlive.profile .
 
-RUN tlmgr init-usertree 
+RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
+    && tar --strip-components=1 -xvf install-tl-unx.tar.gz \
+    && ./install-tl --profile=texlive.profile
 
-RUN tlmgr option repository ftp://tug.org/historic/systems/texlive/2018/tlnet-final
+# RUN apt-get update \
+#     && apt-get install texlive-base -y
 
-RUN tlmgr install latexmk texliveonfly --repository ftp://tug.org/historic/systems/texlive/2018/tlnet-final
+# RUN tlmgr init-usertree 
 
-RUN tlmgr install biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel --repository ftp://tug.org/historic/systems/texlive/2018/tlnet-final
+# RUN tlmgr option repository ftp://tug.org/historic/systems/texlive/2018/tlnet-final
+
+RUN tlmgr install latexmk texliveonfly
+
+RUN tlmgr install biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel 
 
