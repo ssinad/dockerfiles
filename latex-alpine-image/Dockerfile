@@ -1,6 +1,14 @@
-FROM pandoc/alpine-latex:2.11.1.1
+FROM python:3.7.9-alpine3.12
 
-RUN apk add --no-cache --update python3
+ENV PATH=$PATH:/usr/local/texlive/bin/x86_64-linuxmusl
+
+COPY texlive.profile .
+
+RUN apk add --no-cache wget perl tar
+
+RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
+    && tar --strip-components=1 -xzvf install-tl-unx.tar.gz \
+    && ./install-tl --profile=texlive.profile
 
 RUN tlmgr install latexmk texliveonfly
 
