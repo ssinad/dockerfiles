@@ -4,14 +4,10 @@ ENV PATH=$PATH:/usr/local/texlive/bin/x86_64-linuxmusl
 
 COPY texlive.profile .
 
-RUN apk add --no-cache wget perl tar
-
-RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
-    && tar --strip-components=1 -xzvf install-tl-unx.tar.gz \
-    && ./install-tl --profile=texlive.profile
-
-RUN tlmgr install latexmk texliveonfly
-
-RUN tlmgr install biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel
+RUN     apk add --no-cache wget perl tar \
+    &&  wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
+    &&  tar --strip-components=1 -xzvf install-tl-unx.tar.gz \
+    &&  ./install-tl --profile=texlive.profile \
+    &&  tlmgr install latexmk texliveonfly install biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel
 
 ENTRYPOINT []
