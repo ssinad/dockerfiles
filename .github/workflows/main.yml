@@ -29,6 +29,6 @@ jobs:
       run: |
         for dir in *; do 
           TAGS="-t $USERNAME/$dir:$GITHUB_SHA -t $USERNAME/$dir:latest"
-          ./github/scripts/docker-build-push.sh $USERNAME "$dir" "$TAGS" $GITHUB_SHA &
+          ./.github/scripts/docker-build-push.sh $USERNAME "$dir" "$TAGS" $GITHUB_SHA &
         done
         wait
