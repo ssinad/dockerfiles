@@ -1,4 +1,4 @@
-FROM python:3.7.9-alpine3.12
+FROM python:3.8.7-alpine3.12
 
 ENV PATH=$PATH:/usr/local/texlive/bin/x86_64-linuxmusl
 

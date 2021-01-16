@@ -1,4 +1,4 @@
-FROM  python:3.9.0-alpine3.12
+FROM  python:3.8.7-alpine3.12
 
 ENV PATH=/usr/local/texlive/bin/x86_64-linuxmusl:$PATH
 
@@ -13,3 +13,4 @@ RUN apk --no-cache add perl wget xz tar curl && \
 	tar --strip-components=1 -xvf install-tl-unx.tar.gz && \
     ./install-tl --profile=texlive.profile
 
+ENTRYPOINT []

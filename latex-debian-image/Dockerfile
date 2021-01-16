@@ -1,4 +1,4 @@
-FROM python:3.9.0-slim-buster
+FROM python:3.8.7-slim-buster
 
 ENV PATH=$PATH:/usr/local/texlive/bin/x86_64-linux
 
