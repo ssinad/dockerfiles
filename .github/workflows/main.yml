@@ -31,4 +31,4 @@ jobs:
           TAGS="-t $USERNAME/$dir:$GITHUB_SHA -t $USERNAME/$dir:latest"
           ./.github/scripts/docker-build-push.sh $USERNAME "$dir" "$TAGS" $GITHUB_SHA &
         done
-        # wait
+        wait
