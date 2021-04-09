@@ -4,3 +4,5 @@ RUN	    python3 -m pip install --upgrade google-api-python-client==1.12.5 google
     &&  apt-get update && apt-get -y install curl
 
 COPY gdrive-update /usr/local/bin
+
+ENTRYPOINT [ "gdrive-update" ]
