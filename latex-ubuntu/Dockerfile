@@ -11,6 +11,7 @@ RUN     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezo
     &&  add-apt-repository ppa:deadsnakes/ppa \ 
     &&  apt-get update \ 
     &&  apt-get install -y python3.8-minimal \
+    && ln -s /usr/bin/python3.8 /usr/bin/python \
     &&  wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
     &&  tar --strip-components=1 -xzvf install-tl-unx.tar.gz \
     &&  ./install-tl --profile=texlive.profile \
