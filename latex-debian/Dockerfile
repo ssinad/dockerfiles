@@ -1,10 +1,14 @@
-FROM python:3.8.7-slim-buster
+FROM openjdk:11.0.11-jre-buster
 
 ENV PATH=$PATH:/usr/local/texlive/bin/x86_64-linux
 
 COPY texlive.profile .
 
-RUN     apt-get update && apt-get install -y wget tar perl-tk \
+RUN     apt-get update && apt-get install -y wget tar perl-tk software-properties-common \
+    &&  add-apt-repository ppa:deadsnakes/ppa \ 
+    &&  apt-get update \ 
+    &&  apt-get install -y python3.8-minimal \
+    && ln -s /usr/bin/python3.8 /usr/bin/python \
     &&  wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
     &&  tar --strip-components=1 -xzvf install-tl-unx.tar.gz \
     &&  ./install-tl --profile=texlive.profile \
