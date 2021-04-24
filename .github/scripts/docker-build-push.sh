@@ -2,7 +2,7 @@
 
 set -x
 USERNAME=$1
-dir=$2
+dir="$2"
 GITHUB_SHA=$3
 TAGS="-t $USERNAME/$dir:$GITHUB_SHA -t $USERNAME/$dir:latest"
     docker pull $USERNAME/$dir:latest \
