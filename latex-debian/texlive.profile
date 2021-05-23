@@ -12,7 +12,7 @@ TEXMFVAR ~/Library/texlive/texmf-var
 instopt_adjustpath 0
 instopt_adjustrepo 1
 instopt_letter 1
-instopt_portable 0
+instopt_portable 1
 instopt_write18_restricted 1
 tlpdbopt_autobackup 1
 tlpdbopt_backupdir tlpkg/backups
