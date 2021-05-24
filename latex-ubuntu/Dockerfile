@@ -19,4 +19,6 @@ RUN     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezo
     &&  ./install-tl --profile=texlive.profile \
     &&  tlmgr install latexmk texliveonfly biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel everysel
 
+WORKDIR /root
+
 ENTRYPOINT []

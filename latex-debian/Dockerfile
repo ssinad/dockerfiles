@@ -16,4 +16,6 @@ RUN     apt-get update && apt-get install -y wget tar perl-tk software-propertie
     &&  ./install-tl --profile=texlive.profile \
     &&  tlmgr install latexmk texliveonfly biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel everysel
 
+WORKDIR /root
+
 ENTRYPOINT []
