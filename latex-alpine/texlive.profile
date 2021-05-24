@@ -2,13 +2,13 @@
 # It will NOT be updated and reflects only the
 # installation profile at installation time.
 selected_scheme scheme-basic
-TEXDIR /usr/local/texlive
-TEXMFCONFIG ~/Library/texlive/texmf-config
-TEXMFHOME ~/Library/texmf
-TEXMFLOCAL /usr/local/texlive/texmf-local
-TEXMFSYSCONFIG /usr/local/texlive/texmf-config
-TEXMFSYSVAR /usr/local/texlive/texmf-var
-TEXMFVAR ~/Library/texlive/texmf-var
+TEXDIR /root/texlive
+TEXMFLOCAL /root/texlive/texmf-local
+TEXMFSYSCONFIG /root/texlive/texmf-config
+TEXMFSYSVAR /root/texlive/texmf-var
+# TEXMFVAR ~/Library/texlive/texmf-var
+# TEXMFCONFIG ~/Library/texlive/texmf-config
+# TEXMFHOME ~/Library/texmf
 instopt_adjustpath 0
 instopt_adjustrepo 1
 instopt_letter 1
