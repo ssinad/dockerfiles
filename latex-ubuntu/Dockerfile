@@ -1,6 +1,6 @@
 FROM ubuntu:focal-20201106
 
-ENV PATH=$PATH:/usr/local/texlive/bin/x86_64-linux \
+ENV PATH=$PATH:/root/texlive/bin/x86_64-linux \
     TZ=Canada/Mountain
 
 COPY texlive.profile .

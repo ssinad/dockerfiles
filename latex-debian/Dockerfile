@@ -1,6 +1,6 @@
 FROM openjdk:11.0.11-jre-buster
 
-ENV PATH=$PATH:/usr/local/texlive/bin/x86_64-linux
+ENV PATH=$PATH:/root/texlive/bin/x86_64-linux
 
 COPY texlive.profile .
 

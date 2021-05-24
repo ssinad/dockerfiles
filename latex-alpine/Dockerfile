@@ -1,6 +1,6 @@
 FROM python:3.8.7-alpine3.12
 
-ENV PATH=$PATH:/usr/local/texlive/bin/x86_64-linuxmusl
+ENV PATH=$PATH:/root/texlive/bin/x86_64-linuxmusl
 
 COPY texlive.profile .
 
