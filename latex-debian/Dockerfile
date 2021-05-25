@@ -10,12 +10,14 @@ RUN     apt-get update && apt-get install -y wget tar perl-tk software-propertie
     &&  add-apt-repository ppa:deadsnakes/ppa \ 
     &&  apt-get update \ 
     &&  apt-get install -y python3.8-minimal \
-    && ln -s /usr/bin/python3.8 /usr/bin/python \
-    && cd /tmp \
+    &&  ln -s /usr/bin/python3.8 /usr/bin/python \
+    &&  cd /tmp \
     &&  wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
     &&  tar --strip-components=1 -xzvf install-tl-unx.tar.gz \
     &&  ./install-tl --profile=texlive.profile \
-    &&  tlmgr install latexmk texliveonfly biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel everysel
+    &&  tlmgr update --self \
+    &&  tlmgr install latexmk texliveonfly biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel everysel \
+    &&  tlmgr update --self
 
 WORKDIR /root
 

@@ -18,7 +18,9 @@ RUN     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezo
     &&  wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
     &&  tar --strip-components=1 -xzvf install-tl-unx.tar.gz \
     &&  ./install-tl --profile=texlive.profile \
-    &&  tlmgr install latexmk texliveonfly biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel everysel
+    &&  tlmgr update --self \
+    &&  tlmgr install latexmk texliveonfly biblatex biblatex-apa biblatex-ieee biblatex-nature biber babel everysel \
+    &&  tlmgr update --self
 
 WORKDIR /root
 
